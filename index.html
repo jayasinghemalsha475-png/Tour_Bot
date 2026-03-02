@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sigiriya Tourism Chatbot</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- AOS Library for Scroll Animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #27ae60;
+    transition: 0.3s;
+}
+
+/* ===== HERO BANNER ===== */
+.hero {
+    height: 90vh;
+    background: url('sigiriya.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+/* Images */
+.section img {
+    width: 300px;
+    border-radius: 10px;
+    margin: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease-in-out;
+}
+
+.section img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===== CHATBOT ===== */
+df-messenger {
+    --df-messenger-bot-message: #2c3e50;
+    --df-messenger-button-titlebar-color: #2c3e50;
+    --df-messenger-chat-background-color: #f4f4f4;
+    --df-messenger-font-color: white;
+    --df-messenger-user-message: #27ae60;
+    animation: fadeIn 2s ease-in-out 2s;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <h2>Sigiriya Tourism</h2>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Attractions</a></li>
+        <li><a href="#">Tourism Info</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ===== HERO BANNER ===== -->
+<div class="hero">
+    <h1 data-aos="fade-down">Welcome to Sigiriya Tourism Chatbot </h1>
+    <p data-aos="fade-up">Ask about tourism potential, main attractions, visitor problems, and facilities</p>
+</div>
+
+<!-- ===== MAIN SECTION ===== -->
+<div class="section">
+    <h2 data-aos="fade-up">Main Attractions</h2>
+    <img src="sigiriya1.jpg" alt="Lion Rock" data-aos="zoom-in">
+    <img src="sigiriya3.jpg" alt="Gardens" data-aos="zoom-in">
+    <img src="sigiriya2.jpg" alt="Frescoes" data-aos="zoom-in">
+    <p data-aos="fade-up">
+        Sigiriya is a UNESCO World Heritage Site and one of Sri Lanka’s most important tourist destinations. 
+        Use our chatbot to learn more about tourism potential, attractions, and problems.
+    </p>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    Final Year Research Project | Sigiriya Tourism Chatbot
+</footer>
+
+<!-- ===== DIALOGFLOW CHATBOT ===== -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    
+    <df-messenger
+      intent="WELCOME"
+      chat-title="SigiriyaTourismBot🏝️💦"
+      agent-id="ada20e13-717f-4fa2-bd56-85c02ea720d2"
+      language-code="en">
+    </df-messenger>
+
+<!-- ===== AOS SCROLL ANIMATIONS ===== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200, // animation duration
+    once: true, // animate only once
+  });
+</script>
+
+</body>
+</html>
